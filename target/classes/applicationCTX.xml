@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- vo -->
+	<!-- userInfoVO 클래스의 bean을 만든다. -->
+	<bean id="userInfoVO" class="com.tjoeun.vo.UserInfoVO"/>
+	<!-- ContentList 클래스의 bean을 만든다. -->
+	<bean id="ContentList" class="com.tjoeun.vo.ContentList"/>
+	<!-- ContentVO 클래스의 bean을 만든다. -->
+	<bean id ="ContentVO" class="com.tjoeun.vo.ContentVO"/>
+	<!-- ReservationVO 클래스의 bean을 만든다. -->
+	<bean id="ReservationVO" class="com.tjoeun.vo.ReservationVO"/>
+	<!-- ReservationList 클래스의 bean을 만든다. -->
+	<bean id="ReservationList" class="com.tjoeun.vo.ReservationList"/>
+	<!-- BestContentList 클래스의 bean을 만든다. -->
+	<bean id="BestContentList" class="com.tjoeun.vo.ContentList"/>
+	<!-- MyContentVO 클래스의 bean을 만든다. -->
+	<bean id="MyContentVO" class="com.tjoeun.vo.ContentVO"/>
+	<!-- MyContentList 클래스의 bean을 만든다. -->
+	<bean id="MyContentList" class="com.tjoeun.vo.ContentList"/>
+	
+	
+	<!-- service -->
+	<!-- userInfo 클래스의 bean 생성 -->
+	<bean id ="login" class="com.tjoeun.service.loginService"/>
+	<bean id ="Register" class="com.tjoeun.service.RegisterService"/>
+	<bean id ="DeleteConfirm" class="com.tjoeun.service.DeleteConfirmService"/>
+	<bean id="UpdateConfirm" class= "com.tjoeun.service.UpdateConfirmService"/>
+
+	<!-- content 클래스의 bean 생성 -->
+	<bean id="ContentInsert" class="com.tjoeun.service.ContentInsertService"/>
+	<bean id="ContentView" class="com.tjoeun.service.ContentViewService"/>
+	<bean id="ContentSelect" class="com.tjoeun.service.ContentSelectService"/>
+	<bean id="Increment" class = "com.tjoeun.service.IncrementService"/>
+	<bean id="Delete" class = "com.tjoeun.service.DeleteContentService"/>
+	<bean id="Update" class = "com.tjoeun.service.UpdateContentService"/>
+	<!-- MyContent 클래스의 bean을 만든다. -->
+	<bean id="MyContent" class="com.tjoeun.service.MyContentSelectService"/>
+	
+<!--myPage 관련된 bean  -->
+	<!-- reservation 클래스의 bean 생성 -->
+	<bean id="reservationContent" class = "com.tjoeun.service.ReservationContetnService"/>
+	
+	
+	
+	<!-- dao -->	
+	<!-- UserInfoDAO 클래스의 bean을 만든다. -->
+	<bean id="userInfoDAO" class="com.tjoeun.dao.UserInfoDAO"/>
+	<!-- ContentDAO 클래스의 bean을 만든다. -->
+	<bean id="ContentDAO" class="com.tjoeun.dao.ContentDAO"/>
+	<!-- Reservation DAO 클래스의 bean을 만든다. -->
+	<bean id="ReservationDAO" class="com.tjoeun.dao.ReservationDAO"/>
+
+
+</beans>

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/*list 페이지의 bestcontent*/
+#mainPics{
+	 -webkit-animation: fadein 2s;
+	 border-radius: 5%;
+}
+@-webkit-keyframes fadein {
+      /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.Mainbox{
+	position: relative;
+}
+.MainboxText{
+	position: absolute;
+	visibility: hidden;
+	font-weight: bold;
+	color: black;
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
+}
+.Mainbox:hover{
+	opacity: 0.7;
+}
+.Mainbox:hover .MainboxText{
+	visibility: visible;
+} 
+
+#mainPics{
+	width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.section wrapper{
+	background-color: #F5F6CE;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+

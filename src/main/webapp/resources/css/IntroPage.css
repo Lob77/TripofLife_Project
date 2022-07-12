@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/*video부분 css */
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.IntroPageJb{
+ 	overflow: hidden; 
+ 	margin: 0px auto; 
+    height: 100%;
+    width: 100%
+    position: relative;
+}
+video{
+	width: 100%
+	
+}
+ 
+.JbText {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    font-family: 'Roboto', Arial, sans-serif;
+		    font-size: 40px;
+		    font-weight: bold;
+		    line-height: 1.2;
+		    letter-spacing: 0.05em;
+		    white-space: nowrap;
+		    text-transform: uppercase;
+		    color: #fff;
+		    background-color: #000;
+		    mix-blend-mode: multiply;
+		    opacity: 0;
+		    animation: fadeInText 3s 2s ease-out forwards;
+		 	margin-top: 3.7%;
+		 	top: 0;
+		 
+		
+		}
+		
+		@keyframes scaleImage {
+		    100% {
+		        transform: scale(1);
+		    }
+		}
+		@keyframes fadeInText {
+		    100% {
+		        opacity: 1;
+		    }
+		} 

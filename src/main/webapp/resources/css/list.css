@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/*list 페이지의 bestcontent*/
+.bestMainTitle p{
+	text-align: center;
+	text-decoration: underline; /*밑줄*/
+	text-underline-position:underline; /*밑줄 여유있게 만들기*/
+	font-weight: bold;
+	font-size: 20px;
+	
+}
+.bestMainTitle{
+	margin-top: 5px;
+}
+
+
+.bestContent1{
+	width:120px;
+	height: 120px;
+	border-radius: 50%; /*원형으로 만들기*/
+	margin-bottom: 5px;
+	margin-right: 100px;
+	margin-top: 5px;
+	align-content: center;
+	align-items: center;
+}
+.bestImg1{
+	width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius: 50%; 
+}
+.bestContent1 img{
+	transition: all 0.3s linear; /* 선형속도로 0.3초 동안 전체크기 */
+} 
+.bestContent1:hover img {
+  transform: scale(1.15);/* 크기 1.15배 키움 */
+}
+.bestTitle{
+	margin: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+#bestButton1{
+     margin:auto;
+     display:block;
+}
+
+.bestContent2{
+	width:120px;
+	height: 120px;
+	border-radius: 50%; 
+	margin-bottom: 5px;
+	margin-right: 100px;
+	margin-top: 5px;
+	align-content: center;
+	align-items: center;
+}
+.bestImg2{
+	width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius: 50%; 
+}
+.bestContent2 img{
+	transition: all 0.3s linear;
+} 
+.bestContent2:hover img {
+  transform: scale(1.15);
+}
+#bestButton2{
+     margin:auto;
+     display:block;
+     margin-bottom: 5px;
+}
+
+.bestContent3{
+	width:120px;
+	height: 120px;
+	border-radius: 50%; 
+	margin-bottom: 5px;
+	margin-top: 5px;
+	align-content: center;
+	align-items: center;
+}
+.bestImg3{
+	width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius: 50%; 
+}
+.bestContent3 img{
+	transition: all 0.3s linear;
+} 
+.bestContent3:hover img {
+  transform: scale(1.15);
+}
+#bestButton3{
+     margin:auto;
+     display:block;
+     margin-bottom: 5px;
+}
+#title{
+	font-family: 'Lobster', cursive;
+	font-family: 'Rubik Moonrocks', cursive;
+}
