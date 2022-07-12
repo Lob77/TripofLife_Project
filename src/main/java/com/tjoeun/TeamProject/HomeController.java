@@ -609,7 +609,7 @@ private String getJSON(String subject) {
 		
 	}
 	
- //myPage 내 콘텐츠 리스트(reservation) 표출기능
+ //myPage 내 콘텐츠 리스트 표출기능
 	@RequestMapping("/myContentGo")
 	public String myContentGo(HttpServletRequest request, Model model) {
 		System.out.println("컨트롤러의 myContentGo() 메소드 실행");

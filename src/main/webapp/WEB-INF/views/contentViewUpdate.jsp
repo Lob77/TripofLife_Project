@@ -17,62 +17,64 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
 
-
-<style type="text/css">
-	body {
-	    margin: 0;
-		padding: 0;
-	    height: 100%;
-	}
-	
-	.board_title {	
-		font-weight : 700;	
-		font-size : 22pt;	
-		margin : 10pt;
-	}
-	.board_info_box {
-		color : #6B6B6B;	
-		margin : 10pt;
-	}
-	.board_author {	
-		font-size : 10pt;	
-		margin-right : 10pt;
-	}
-	.board_date {	
-		font-size : 10pt;
-	}
-	.board_content {	
-		color : #444343;	
-		font-size : 12pt;	
-		margin : 10pt;
-	}
-	.board_tag {	
-		font-size : 11pt;	
-		margin : 10pt;	
-		padding-bottom : 10pt;
-	}
-	
-	.text {
-		
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
+	<style type="text/css">
+		body {
+		    margin: 0;
+			padding: 0;
 		    height: 100%;
-		    font-family: 'Roboto', Arial, sans-serif;
-		    font-size: 40px;
-		    font-weight: bold;
-		    line-height: 1.2;
-		    letter-spacing: 0.05em;
-		    white-space: nowrap;
-		    text-transform: uppercase;
-		    color: #fff;
-		    background-color: #000;
-		    mix-blend-mode: multiply;
-		    opacity: 0;
-		    animation: fadeInText 3s 2s ease-out forwards;
-		
 		}
+		
+		.board_title {	
+			font-weight : 700;	
+			font-size : 22pt;	
+			margin : 10pt;
+		}
+		.board_info_box {
+			color : #6B6B6B;	
+			margin : 10pt;
+		}
+		.board_author {	
+			font-size : 10pt;	
+			margin-right : 10pt;
+		}
+		.board_date {	
+			font-size : 10pt;
+		}
+		.board_content {	
+			color : #444343;	
+			font-size : 12pt;	
+			margin : 10pt;
+		}
+		.board_tag {	
+			font-size : 11pt;	
+			margin : 10pt;	
+			padding-bottom : 10pt;
+		}
+		
+		.text {
+			
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    height: 100%;
+			    font-family: 'Roboto', Arial, sans-serif;
+			    font-size: 40px;
+			    font-weight: bold;
+			    line-height: 1.2;
+			    letter-spacing: 0.05em;
+			    white-space: nowrap;
+			    text-transform: uppercase;
+			    color: #fff;
+			    background-color: #000;
+			    mix-blend-mode: multiply;
+			    opacity: 0;
+			    animation: fadeInText 3s 2s ease-out forwards;
+			
+			}
 		@keyframes scaleImage {
 		    100% {
 		        transform: scale(1);
@@ -83,7 +85,10 @@
 		        opacity: 1;
 		    }
 		}
-</style>
+		.navbar-brand{
+			font-family: 'Anton', sans-serif;
+		}
+	</style>
 
 <script type="text/javascript">
 	function reservation() {
@@ -146,7 +151,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="./index1.nhn" style="margin-right:30px;">MY TRIP</a>
+			<a class="navbar-brand" href="./" style="margin-right:30px;">Trip Of Life</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"

@@ -15,51 +15,57 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<style type="text/css">
-.nav-left {
-	background-color: #f8f9fa;
-	width: 15em;
-	height: 31em;
-	list-style-type: none;
-	margin: 3em 0;
-}
-
-.container-pos {
-	width: 18em;
-}
-
-#container {
-	margin-top: 50px;
-}
-
-h5 {
-	font-weight: 400;
-	margin-left: 0.5em;
-}
-
-h6 {
-	font-weight: 400;
-	margin-left: 0.5em;
-}
-
-li a {
-	display: block;
-	color: #000000;
-	padding: 8px;
-	margin-left: 0.5em;
-	text-decoration: none;
-}
-
-li a:hover {
-	background-color: gray;
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">  
+	<style type="text/css">
+		.nav-left {
+			background-color: #f8f9fa;
+			width: 15em;
+			height: 31em;
+			list-style-type: none;
+			margin: 3em 0;
+		}
+		
+		.container-pos {
+			width: 18em;
+		}
+		
+		#container {
+			margin-top: 50px;
+		}
+		
+		h5 {
+			font-weight: 400;
+			margin-left: 0.5em;
+		}
+		
+		h6 {
+			font-weight: 400;
+			margin-left: 0.5em;
+		}
+		
+		li a {
+			display: block;
+			color: #000000;
+			padding: 8px;
+			margin-left: 0.5em;
+			text-decoration: none;
+		}
+		
+		li a:hover {
+			background-color: gray;
+		}
+		.navbar-brand{
+			font-family: 'Anton', sans-serif;
+		}
+	</style>
 </head>
 <body>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="./" style="margin-right:30px;">MY TRIP</a>
+			<a class="navbar-brand" href="./" style="margin-right:30px;">Trip Of Life</a>
 			<form action="contentSearch.nhn" class="d-flex"
 				style="margin-right: 20px;">
 				<input id="item" name="item" class="form-control me-2" type="text"
@@ -69,24 +75,27 @@ li a:hover {
 			</form>
 			<!-- 글쓰기 버튼 -->
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" style="text-align:center;">
-				<li class="btn btn-light"><a class="nav-link"
-					href="./content.nhn">여행 등록하기</a></li>
+				<li class="btn btn-light">
+				<a class="nav-link" href="./content">여행 등록하기</a></li>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-				<li class="btn btn-light"><a class="nav-link"
-					href="./mypageView.nhn">여행지 관리</a></li>
+				<form action="myContentGo">
+					<input type="hidden" name="userID" value="${userID}"/>
+					<li class="btn btn-light">
+					<input class="nav-link" type="submit" value="내 여행지 관리" style="border:none; background-color:#FAFAFA;"></li>
+				</form>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-				<form action="myContentResGo.nhn">
+				<form action="myContentResGo">
 					<input type="hidden" id="idx" name="userID" value="${userID}"/>
 					<li class="btn btn-light">
-					<input class="nav-link" type="submit" value="주문 내역 확인" style="border:none;"></li>
+					<input class="nav-link" type="submit" value="찜한 내역 확인" style="border:none; background-color:#FAFAFA;"></li>
 				</form>
 			</ul>
 			<form action="logout.nhn">
 				<button class="btn btn-outline-dark" type="submit"
 					style="margin: 10px">
-					<a href="./login.nhn" style="text-decoration: none; color: black;">logout</a>
+					<a href="./login" style="text-decoration: none; color: black;">logout</a>
 				</button>
 			</form>
 		</div>
@@ -109,14 +118,14 @@ li a:hover {
 			      	<input type="submit" value="내 컨텐츠 찜내역">
 	      		</form>
 		     </li>
-		      <li>
+<%-- 		      <li>
 		      	<form action="reservationGo">
 		        <input type="hidden" id="idx" name="userID" value="${userID}"/>
 		      	<!-- <input type="text" id="userID" name="userID" value="${userID}"> -->
 		      	<input type="submit" value="찜한 내역 조회">
 	      		</form>
-		     </li>
-		      <li>
+		     </li> --%>
+		      <li style="margin-top: 5px;">
 			      <form action="myContentGo">
 			     	<input type = "hidden" name="userID" value="${userID}"/>
 			     	<input type="submit" value="내 콘텐츠 보러가기"/> 

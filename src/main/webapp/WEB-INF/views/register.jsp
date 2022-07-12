@@ -15,6 +15,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/team4.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">     
 	<style type="text/css">
 		html, body {
 		    margin: 0;
@@ -65,15 +68,18 @@
 		        opacity: 1;
 		    }
 		}
+		.navbar-brand{
+			font-family: 'Anton', sans-serif;
+		}
     </style>
-<title>MY TRIP</title>
+<title>Trip Of Life</title>
 </head>
 
 <body>
  <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="./logoutMain" style="margin-right:30px;">MY TRIP</a>
+                <a class="navbar-brand" href="./logoutMain" style="margin-right:30px;">Trip Of Life</a>
                 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                			 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<!--  <li class="nav-item dropdown">
@@ -85,10 +91,10 @@
                                 <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                             </ul>
                         </li> -->
-                         	<form class="d-flex" style="margin-right: 30px;">
+                        <!--<form class="d-flex" style="margin-right: 30px;">
 						        <input class="form-control me-2" type="text" placeholder="Search">
 						        <button class="btn btn-dark" type="button">Search</button>
-      						</form>
+      						</form> -->
                  			   <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" style="float: right">
                     			<li class="btn btn-light"></li>
                    				 </ul>
@@ -180,9 +186,9 @@
 									</div>
 									<!-- checkMessage id 추가 -->
 									<div id="checkMessage" class="modal-body"></div>
-									<div class="modal-footer">
-										<button class="btn btn-primary" type="button" data-dismiss="modal" onclick="modalclose();">확인</button>
-									</div>
+									<!--<div class="modal-footer">
+										 <button class="btn btn-primary" type="button" data-dismiss="modal" onclick="modalclose();">확인</button> 
+									</div>-->
 								</div>
 							</div>
 						</div>

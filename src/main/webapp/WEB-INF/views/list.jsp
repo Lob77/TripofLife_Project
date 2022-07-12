@@ -21,12 +21,16 @@
  -->
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Shop Homepage - Start Bootstrap Template</title>
+<title>TripOfLife</title>
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 <link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
+<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	
 <link href="css/styles.css" rel="stylesheet" />
 <link href="css/list.css" rel="stylesheet" />
 
@@ -98,8 +102,13 @@
 	        opacity: 1;
 	    }
 	}
+	
+	
+	.navbar-brand{
+		font-family: 'Anton', sans-serif;
+	}
 </style>
-	<title>MY TRIP</title>
+	<title>Trip Of Life</title>
 	
 </head>
 <body>
@@ -109,7 +118,7 @@
 <!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="./" style="margin-right:30px;">MY TRIP</a>
+			<a class="navbar-brand" href="./" style="margin-right:30px;">Trip Of Life</a>
 			<form class="d-flex" style="margin-right: 20px;">
 				<input id="userSubject" name="item" class="form-control me-2" type="text"
 					placeholder="Search" autocomplete="off" onkeyup="searchFunction()" >
@@ -142,7 +151,7 @@
  <!-- Navigation-->
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-            	<a class="navbar-brand" href="./" style="margin-right:30px;">MY TRIP</a>
+            	<a class="navbar-brand" href="./" style="margin-right:30px;">Trip Of Life</a>
                 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                			 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<!--  <li class="nav-item dropdown">

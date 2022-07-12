@@ -18,12 +18,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Shop Homepage - Start Bootstrap Template</title>
+<title>TripOfLife</title>
         <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">        
 <link href="css/styles.css" rel="stylesheet" />
 <link href="css/HomePage.css" rel="stylesheet" />
 
@@ -62,7 +65,11 @@
         opacity: 1;
     }
 }
-        </style>
+.navbar-brand{
+	font-family: 'Anton', sans-serif;
+}
+
+</style>
         
 </head>
 <body>
@@ -72,7 +79,7 @@
        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">My Trip</a>
+                <a class="navbar-brand" href="#!">Trip Of Life</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -90,16 +97,22 @@
                         </li> -->
                     </ul>
                     
-               	<form class="d-flex" style="margin-right: 20px;">
+       	<!--   <form class="d-flex" style="margin-right: 20px;">
 			        <input class="form-control me-2" type="text" placeholder="Search">
 			        <button class="btn btn-dark" type="button">Search</button>
-      			</form>
+      			</form> -->
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="button" onclick="location.href='./logout'">
                             <i class="bi bi-person-circle"></i>
                             logout
                         </button>
                     </form>
+                     <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit" style="margin: 10px">
+                            <a  href="./register" style="text-decoration:none; color:black;">register</a>
+                        </button>
+                      </form>   
+                    
                 </div>
             </div>
         </nav>
@@ -109,7 +122,7 @@
        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">My Trip</a>
+                <a class="navbar-brand" href="#!">Trip Of Life</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -127,14 +140,19 @@
                         </li> -->
                     </ul>
                     
-               	<form class="d-flex" style="margin-right: 20px;">
+			<!-- <form class="d-flex" style="margin-right: 20px;">
 			        <input class="form-control me-2" type="text" placeholder="Search">
 			        <button class="btn btn-dark" type="button">Search</button>
-      			</form>
+      			</form> -->
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="button" onclick="location.href='./login'">
                             <i class="bi bi-person-circle"></i>
                             login
+                        </button>
+                    </form>
+                    <form class="d-flex">
+                         <button class="btn btn-outline-dark" type="submit" style="margin: 10px">
+                            <a  href="./register" style="text-decoration:none; color:black;">register</a>
                         </button>
                     </form>
                 </div>

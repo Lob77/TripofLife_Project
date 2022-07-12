@@ -15,64 +15,67 @@ boolean login = userID != null ? true : false;
 <head>
 <meta charset="UTF-8">
 <title>MY TRIP</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<style type="text/css">
-.nav-left {
-	background-color: #f8f9fa;
-	width: 15em;
-	height: 31em;
-	list-style-type: none;
-	margin: 3em 0;
-}
-
-h5 {
-	font-weight: 400;
-	margin-left: 0.5em;
-}
-
-h6 {
-	font-weight: 400;
-	margin-left: 0.5em;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-a:hover {
-	font-weight: 900;
-}
-.container-pos{
-	width: 18em;
-}
-#container{
-	margin-top: 50px;
-}
-li a {
-	display: block;
-	color: #000000;
-	padding: 8px;
-	margin-left: 0.5em;
-	text-decoration: none;
-}
-
-li a:hover {
-	background-color: gray;
-}
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">  
+	<style type="text/css">
+		.nav-left {
+			background-color: #f8f9fa;
+			width: 15em;
+			height: 31em;
+			list-style-type: none;
+			margin: 3em 0;
+		}
+		
+		h5 {
+			font-weight: 400;
+			margin-left: 0.5em;
+		}
+		
+		h6 {
+			font-weight: 400;
+			margin-left: 0.5em;
+		}
+		
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		
+		a:hover {
+			font-weight: 900;
+		}
+		.container-pos{
+			width: 18em;
+		}
+		#container{
+			margin-top: 50px;
+		}
+		li a {
+			display: block;
+			color: #000000;
+			padding: 8px;
+			margin-left: 0.5em;
+			text-decoration: none;
+		}
+		
+		li a:hover {
+			background-color: gray;
+		}
+		.navbar-brand{
+			font-family: 'Anton', sans-serif;
+		}
+	</style>
 </head>
 <body>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
 			<a class="navbar-brand" href="./"
-				style="margin-right: 30px;">MY TRIP</a>
+				style="margin-right: 30px;">Trip Of Life</a>
 			<form action="contentSearch.nhn" class="d-flex"
 				style="margin-right: 20px;">
 				<input id="item" name="item" class="form-control me-2" type="text"
@@ -94,7 +97,7 @@ li a:hover {
 				<form action="myContentResGo.nhn">
 					<input type="hidden" id="idx" name="userID" value="${userID}"/>
 					<li class="btn btn-light">
-					<input class="nav-link" type="submit" value="주문 내역 확인" style="border:none;"></li>
+					<input class="nav-link" type="submit" value="찜한 내역 확인" style="border:none;"></li>
 				</form>
 			</ul>
 			<form action="logout.nhn">
@@ -110,28 +113,27 @@ li a:hover {
 		<div class="row content">
 			<div class="col-sm-3 sidenav container-pos">
 				<ul class="nav-left">
-					<h6 style="padding-top:15px;">${userID}</h6>
-					<li><a href="logout.nhn">로그아웃</a></li><br/>
+					<h6 style="padding-top:15px; font-weight: bold; font-size: 20px;">${userID}</h6>
+					<li><a href="logout">logout</a></li><br/>
 					<h5>My Account</h5>
 					<li><a href="mypageView.nhn">회원정보수정</a></li>
-					<li><a href="#!">여행지 수정</a></li>
+					<!-- <li><a href="#!">여행지 수정</a></li> -->
 					<br />
+					<h5>My Order</h5>
 					<li>
 						<form action="myContentResGo.nhn">
 							<input type="hidden" id="idx" name="userID" value="${userID}" />
 							<!--<input type="text" id="userID" name="userID" value="${userID}">-->
-							<input type="submit" value="내 컨텐츠 주문내역">
+							<input type="submit" value="내 컨텐츠 찜 내역">
 						</form>
 					</li>
-					<h5>My Order</h5>
-					<li>
-						<form action="reservationGo.nhn">
-							<input type="hidden" id="idx" name="userID" value="${userID}" />
-							<!-- <input type="text" id="userID" name="userID" value="${userID}"> -->
-							<input type="submit" value="주문 내역 조회">
-						</form>
-					</li>
-					<li><a href="#">상품 리뷰</a></li>
+				    <li style="margin-top: 5px;">
+					    <form action="myContentGo">
+					    	<input type = "hidden" name="userID" value="${userID}"/>
+					     	<input type="submit" value="내 콘텐츠 보러가기"/> 
+					    </form>
+				    </li>
+					<!-- <li><a href="#">상품 리뷰</a></li> -->
 					<br />
 					<h5>Customer Service</h5>
 					<li><a href="#">상품 문의</a></li>
@@ -147,7 +149,7 @@ li a:hover {
 							<thead>
 								<div style="padding: 4px; background-color: #173B0B">
 									<h1 colspan="5" style="color: white; text-align: center;">
-										My Content Reservation List <br />
+										My ContentList <br />
 									</h1>
 									<h3 style="color: white; text-align: right;">
 										${MyContentList.totalCount} (${MyContentList.currentPage}
