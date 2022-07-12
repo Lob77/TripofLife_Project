@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name ="google-signin-client_id" content="1010181044700-npq3av62ugl7b9o27uo06i83h9bv8mbd.apps.googleusercontent.com">
 
 <meta charset="UTF-8">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
@@ -17,7 +16,7 @@
 		    height: 100%;
 		}
 		.panel-body{
-  			margin-top: 100px;
+  			margin-top: 150px;
     		padding-bottom: 50px; /* footer의 높이 */
     		text-align: center;
     		margin-left: 0;
@@ -31,18 +30,9 @@
     		position: relative;
     		width: 100%;
 		}
-		footer{
-		    width: 100%;
-		    height: 360px; /* footer의 높이 */
-		    position: absolute;  
-		    bottom: 0;
-		    left: 0;
-		    text-align: center;
-			}
-
 
     </style>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
 <title>MY TRIP</title>
 </head>
 	<body>
@@ -101,7 +91,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="g-signin2" data-onsuccess="onSignIn"/>
+						
 						</form>	
 					</div>
 				</div>

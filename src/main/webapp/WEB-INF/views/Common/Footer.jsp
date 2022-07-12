@@ -7,27 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-/* 	.best_content{
-           display: flex;
-           justify-content: center;
-       }
-	html, body {
-	    margin: 0;
-	    padding: 0;
-	    height: 100%;
-	}
-	a{
-		text-decoration: none;
-		color: black;
-	}
-	a:hover{
-		color:black;
-		font-weight: 900;
-	} 
+
 	footer{
 		position: relative;
 		bottom: 0;
-	} */
+	} 
 </style>
 </head>
 	<!-- Footer -->
