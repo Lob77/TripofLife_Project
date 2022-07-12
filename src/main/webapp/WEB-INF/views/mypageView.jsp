@@ -110,6 +110,7 @@
 			  <li><a href="logout">logout</a></li><br/>
 		      <h5>My Account</h5>
 		      <li><a href="mypageView">회원정보수정</a></li>
+		      <br/>
 		      <h5>My Order</h5>
 		      <li>
 		      	<form action="myContentResGo">
@@ -131,6 +132,7 @@
 			     	<input type="submit" value="내 콘텐츠 보러가기"/> 
 			      </form>
 		      </li>
+		      <br/>
 		      <h5>Customer Service</h5>
 		      <li><a href="#">상품 문의</a></li>
   			</ul>
