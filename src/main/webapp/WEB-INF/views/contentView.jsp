@@ -286,7 +286,7 @@
 					<div class="board_info_box">
 						<span class="board_author">${co.idx},</span><span class="board_author">${co.userID},</span><span class="board_date"><fmt:formatDate value="${co.writeDate}" pattern="yyyy/MM/dd(E)"/></span>
 					</div>
-					<div class="board_content">${co.content}</div>
+					<div class="board_content"><p style="white-space: pre-line;">${co.content}</p></div>
 				</div>
 	
 				<div style="margin-top : 20px">
