@@ -35,7 +35,7 @@
 						</h6><br/>
 						<h6 class="text-uppercase fw-bold mb-4">1234-1230</h6>
 						<br/><br/>
-						<p>AM 10:00 ~ PM 5:00 MON ~ FRI</p>
+						<p>AM 10:00 ~ PM 5:00 (MON ~ FRI)</p>
 						<p>Lunch PM 12:00 ~ 1:00</p>
 					</div>
 					<!-- Grid column -->
@@ -45,22 +45,22 @@
 						<!-- Links -->
 						<h6 class="text-uppercase fw-bold mb-4">Products</h6>
 						<p>
-							<a href="#!" class="text-reset">Angular</a>
+							<a href="https://kr.hotels.com" class="text-reset">숙소 가격비교</a>
 						</p>
 						<p>
-							<a href="#!" class="text-reset">React</a>
+							<a href="https://sky.interpark.com" class="text-reset">항공권 가격비교</a>
 						</p>
 						<p>
-							<a href="#!" class="text-reset">Vue</a>
+							<a href="https://korean.visitseoul.net/map-guide-book" class="text-reset">여행 가이드북 보기</a>
 						</p>
 						<p>
-							<a href="#!" class="text-reset">Laravel</a>
+							<a href="./list" class="text-reset">후기글 보기</a>
 						</p>
 					</div>
 					<!-- Grid column -->
 
 					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-						<h6 class="text-uppercase fw-bold mb-4">Products</h6>
+						<h6 class="text-uppercase fw-bold mb-4">SNS</h6>
 						<p>
 							<a href="https://ko-kr.facebook.com/" class="list-group-item" target="_blank">Facebook</a>
 						</p>

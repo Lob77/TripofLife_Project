@@ -4,9 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
-String userID = (String) session.getAttribute("userID");
-String userPassword = (String) session.getAttribute("userPassword");
-boolean login = userID != null ? true : false;
+	String userID = (String) session.getAttribute("userID");
+	String userPassword = (String) session.getAttribute("userPassword");
+	boolean login = userID != null ? true : false;
 %>
 <!-- 세션에 저장된 로그인 정보 -->
 <!DOCTYPE html>
@@ -17,66 +17,70 @@ boolean login = userID != null ? true : false;
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><!-- 구글 폰트 사용 -->
+<!-- 구글 폰트 사용 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-	<style type="text/css">
-		.nav-left {
-			background-color: #f8f9fa;
-			width: 15em;
-			height: 31em;
-			list-style-type: none;
-			margin: 3em 0;
-		}
-		.container-pos{
-			width: 18em;
-		}
-		#container{
-			margin-top: 50px;
-		}
-		a {
-			text-decoration: none;
-			color: black;
-		}
-		
-		a:hover {
-			font-weight: 900;
-		}
-		
-		h5 {
-			font-weight: 400;
-			margin-left: 0.5em;
-		}
-		
-		h6 {
-			font-weight: 400;
-			margin-left: 0.5em;
-		}
-		
-		li a {
-			display: block;
-			color: #000000;
-			padding: 8px;
-			margin-left: 0.5em;
-			text-decoration: none;
-		}
-		
-		li a:hover {
-			background-color: gray;
-		}
-		.navbar-brand{
-			font-family: 'Anton', sans-serif;
-		}
+<style type="text/css">
+.nav-left {
+	background-color: #f8f9fa;
+	width: 15em;
+	height: 31em;
+	list-style-type: none;
+	margin: 3em 0;
+}
 
-	</style>
+.container-pos {
+	width: 18em;
+}
+
+#container {
+	margin-top: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	font-weight: 900;
+}
+
+h5 {
+	font-weight: 400;
+	margin-left: 0.5em;
+}
+
+h6 {
+	font-weight: 400;
+	margin-left: 0.5em;
+}
+
+li a {
+	display: block;
+	color: #000000;
+	padding: 8px;
+	margin-left: 0.5em;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: gray;
+}
+
+.navbar-brand {
+	font-family: 'Anton', sans-serif;
+}
+</style>
 </head>
 <body>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="./"
-				style="margin-right: 30px;">Trip Of Life</a>
+			<a class="navbar-brand" href="./" style="margin-right: 30px;">Trip
+				Of Life</a>
 			<form action="contentSearch.nhn" class="d-flex"
 				style="margin-right: 20px;">
 				<input id="item" name="item" class="form-control me-2" type="text"
@@ -96,15 +100,15 @@ boolean login = userID != null ? true : false;
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 				<form action="myContentResGo.nhn">
-					<input type="hidden" id="idx" name="userID" value="${userID}"/>
-					<li class="btn btn-light">
-					<input class="nav-link" type="submit" value="찜한 내역 확인" style="border:none;"></li>
+					<input type="hidden" id="idx" name="userID" value="${userID}" />
+					<li class="btn btn-light"><input class="nav-link"
+						type="submit" value="찜한 내역 확인" style="border: none; background-color: #FAFAFA;"></li>
 				</form>
 			</ul>
 			<form action="logout.nhn">
 				<button class="btn btn-outline-dark" type="submit"
 					style="margin: 10px">
-					<a href="./login.nhn" style="text-decoration: none; color: black;">로그아웃</a>
+					<a href="./login.nhn" style="text-decoration: none; color: black;">logout</a>
 				</button>
 			</form>
 		</div>
@@ -116,8 +120,9 @@ boolean login = userID != null ? true : false;
 		<div class="row content">
 			<div class="col-sm-3 sidenav container-pos">
 				<ul class="nav-left">
-				  	<h6 style="padding-top:15px; font-weight: bold; font-size: 20px;">${userID}</h6>
-			  		<li><a href="logout">logout</a></li><br/>
+					<h6 style="padding-top: 15px; font-weight: bold; font-size: 20px;">${userID}</h6>
+					<li><a href="logout">logout</a></li>
+					<br />
 					<h5>My Account</h5>
 					<li><a href="mypageView.nhn">회원정보수정</a></li>
 					<!-- <li><a href="#!">여행지 수정</a></li> -->
@@ -130,12 +135,12 @@ boolean login = userID != null ? true : false;
 							<input type="submit" value="내 컨텐츠 찜 내역">
 						</form>
 					</li>
-				    <li style="margin-top: 5px;">
-					    <form action="myContentGo">
-					    	<input type = "hidden" name="userID" value="${userID}"/>
-					     	<input type="submit" value="내 콘텐츠 보러가기"/> 
-					    </form>
-				    </li>
+					<li style="margin-top: 5px;">
+						<form action="myContentGo">
+							<input type="hidden" name="userID" value="${userID}" /> <input
+								type="submit" value="내 콘텐츠 보러가기" />
+						</form>
+					</li>
 					<!-- <li><a href="#">상품 리뷰</a></li> -->
 					<br />
 					<h5>Customer Service</h5>
@@ -175,7 +180,8 @@ boolean login = userID != null ? true : false;
 								<c:set var="list" value="${ReservationList.list}"></c:set>
 								<c:if test="${list.size() == 0 }">
 									<tr>
-										<td colspan="5" align="right"><marquee>예약이 없습니다.</marquee></td>
+										<td colspan="5" align="right"><marquee>예약이
+												없습니다.</marquee></td>
 									</tr>
 								</c:if>
 								<c:if test="${list.size() != 0 }">
@@ -269,87 +275,7 @@ boolean login = userID != null ? true : false;
 			</div>
 
 	<!-- Footer -->
-	<footer class="text-center text-lg-start bg-light text-muted" >
-		<!-- Section: Social media -->
-		<section
-			class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-		</section>
-		<!-- Section: Social media -->
-		
-		<!-- Section: Links  -->
-		<section class="">
-			<div class="container text-center text-md-start mt-5">
-				<!-- Grid row -->
-				<div class="row mt-3">
-					<!-- Grid column -->
-					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-						<!-- Content -->
-						<h6 class="text-uppercase fw-bold mb-4">
-						Customer Service
-						</h6><br/>
-						<h6 class="text-uppercase fw-bold mb-4">1234-1230</h6>
-						<br/><br/>
-						<p>AM 10:00 ~ PM 5:00 MON ~ FRI</p>
-						<p>Lunch PM 12:00 ~ 1:00</p>
-					</div>
-					<!-- Grid column -->
+	<c:import url="./Common/Footer.jsp" />
 
-					<!-- Grid column -->
-					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-						<!-- Links -->
-						<h6 class="text-uppercase fw-bold mb-4">Products</h6>
-						<p>
-							<a href="#!" class="text-reset">Angular</a>
-						</p>
-						<p>
-							<a href="#!" class="text-reset">React</a>
-						</p>
-						<p>
-							<a href="#!" class="text-reset">Vue</a>
-						</p>
-						<p>
-							<a href="#!" class="text-reset">Laravel</a>
-						</p>
-					</div>
-					<!-- Grid column -->
-
-					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-						<h6 class="text-uppercase fw-bold mb-4">Products</h6>
-						<p>
-							<a href="https://ko-kr.facebook.com/" class="list-group-item" target="_blank">Facebook</a>
-						</p>
-						<p>
-							<a href="https://www.instagram.com/?hl=ko" class="list-group-item" target="_blank">Instagram</a>
-						</p>
-						<p>
-							<a href="https://twitter.com/?lang=ko" class="list-group-item" target="_blank">Twitter</a>
-						</p>
-				</div>
-
-					<!-- Grid column -->
-					<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-						<!-- Links -->
-						<h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-						<p>
-							<i class="fas fa-home me-3"></i> New York, NY 10012, US
-						</p>
-						<p>
-							<i class="fas fa-envelope me-3"></i> info@example.com
-						</p>
-						<p>
-							<i class="fas fa-phone me-3"></i> + 01 234 567 88
-						</p>
-						<p>
-							<i class="fas fa-print me-3"></i> + 01 234 567 89
-						</p>
-					</div>
-					<!-- Grid column -->
-				</div>
-				<!-- Grid row -->
-			</div>
-		</section>
-		<!-- Section: Links  -->
-		
-	</footer>
 </body>
 </html>

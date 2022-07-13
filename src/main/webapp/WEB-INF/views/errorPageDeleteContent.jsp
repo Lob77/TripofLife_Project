@@ -14,7 +14,7 @@ onload = function() {
 </script>
 <head>
 <meta charset="UTF-8">
-<title>MY TRIP</title>
+<title>Trip Of Life</title>
 </head>
 <body>
 </body>
