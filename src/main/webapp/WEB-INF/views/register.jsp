@@ -12,6 +12,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -39,39 +41,11 @@ nav {
 	text-align: center;
 }
 
-.text {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	font-family: 'Roboto', Arial, sans-serif;
-	font-size: 40px;
-	font-weight: bold;
-	line-height: 1.2;
-	letter-spacing: 0.05em;
-	white-space: nowrap;
-	text-transform: uppercase;
-	color: #fff;
-	background-color: #000;
-	mix-blend-mode: multiply;
-	opacity: 0;
-	animation: fadeInText 3s 2s ease-out forwards;
-}
-
-@
-keyframes scaleImage { 100% {
-	transform: scale(1);
-}
-
-}
-@
-keyframes fadeInText { 100% {
-	opacity: 1;
-}
-
-}
 .navbar-brand {
 	font-family: 'Anton', sans-serif;
+}
+a:hover {
+	font-weight: 900;
 }
 </style>
 <title>Trip Of Life</title>
@@ -112,7 +86,8 @@ keyframes fadeInText { 100% {
 				<form class="d-flex">
 					<button class="btn btn-outline-dark" type="submit"
 						style="margin: 10px">
-						<a href="login" style="text-decoration: none; color: black;">login</a>
+						<a href="login" style="text-decoration: none; color: black;">
+						<i class="bi bi-person-circle" style="margin-right: 2px;"></i>login</a>
 					</button>
 					<button class="btn btn-outline-dark" type="submit"
 						style="margin: 10px">

@@ -12,9 +12,9 @@
 <html>
 <head>
 <title>Trip Of Life</title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script type="text/javascript" src="./contentSearch"></script>
@@ -25,39 +25,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <style type="text/css">
-.text {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	font-family: 'Roboto', Arial, sans-serif;
-	font-size: 40px;
-	font-weight: bold;
-	line-height: 1.2;
-	letter-spacing: 0.05em;
-	white-space: nowrap;
-	text-transform: uppercase;
-	color: #fff;
-	background-color: #000;
-	mix-blend-mode: multiply;
-	opacity: 0;
-	animation: fadeInText 3s 2s ease-out forwards;
-}
 
-@
-keyframes scaleImage { 100% {
-	transform: scale(1);
-}
-
-}
-@
-keyframes fadeInText { 100% {
-	opacity: 1;
-}
-
-}
 .navbar-brand {
 	font-family: 'Anton', sans-serif;
+}
+a:hover {
+	font-weight: 900;
 }
 </style>
 </head>
@@ -88,7 +61,8 @@ keyframes fadeInText { 100% {
 			<form action="logout">
 				<button class="btn btn-outline-dark" type="submit"
 					style="margin: 10px">
-					<a href="./login" style="text-decoration: none; color: black;">logout</a>
+					<a href="./login" style="text-decoration: none; color: black;">
+					<i class="bi bi-person-circle" style="margin-right: 2px;"></i>logout</a>
 				</button>
 			</form>
 		</div>

@@ -19,6 +19,8 @@
 	<bean id="MyContentVO" class="com.tjoeun.vo.ContentVO"/>
 	<!-- MyContentList 클래스의 bean을 만든다. -->
 	<bean id="MyContentList" class="com.tjoeun.vo.ContentList"/>
+	<!-- ReservationList 클래스의 bean을 만든다. -->
+	<bean id="MyReservationList" class="com.tjoeun.vo.ReservationList"/>
 	
 	
 	<!-- service -->
@@ -37,10 +39,12 @@
 	<bean id="Update" class = "com.tjoeun.service.UpdateContentService"/>
 	<!-- MyContent 클래스의 bean을 만든다. -->
 	<bean id="MyContent" class="com.tjoeun.service.MyContentSelectService"/>
+	<!-- MyContentRes 클래스의 bean을 만든다. -->
+	<bean id="MyContentRes" class="com.tjoeun.service.MyReservationSelectService"/>
 	
 <!--myPage 관련된 bean  -->
-	<!-- reservation 클래스의 bean 생성 -->
-	<bean id="reservationContent" class = "com.tjoeun.service.ReservationContetnService"/>
+	<!-- reservation 클래스의 bean 생성 
+	<bean id="reservationContent" class = "com.tjoeun.service.ReservationContetnService"/>-->
 	
 	
 	

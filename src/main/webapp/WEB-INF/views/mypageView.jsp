@@ -14,6 +14,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Trip Of Life</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -106,7 +108,8 @@ li a:hover {
 			<form action="logout.nhn">
 				<button class="btn btn-outline-dark" type="submit"
 					style="margin: 10px">
-					<a href="./login" style="text-decoration: none; color: black;">logout</a>
+					<a href="./login" style="text-decoration: none; color: black;">
+					<i class="bi bi-person-circle" style="margin-right: 2px;"></i>logout</a>
 				</button>
 			</form>
 		</div>
@@ -128,7 +131,7 @@ li a:hover {
 						<form action="myContentResGo">
 							<input type="hidden" id="idx" name="userID" value="${userID}" />
 							<!--<input type="text" id="userID" name="userID" value="${userID}">-->
-							<input type="submit" value="내 컨텐츠 찜내역">
+							<input type="submit" value="내 컨텐츠 찜 내역">
 						</form>
 					</li>
 					<%-- 		      <li>

@@ -9,24 +9,24 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.ui.Model;
 
-import com.tjoeun.dao.ContentDAO;
 import com.tjoeun.dao.ReservationDAO;
 import com.tjoeun.vo.ContentList;
-import com.tjoeun.vo.ContentVO;
 import com.tjoeun.vo.ReservationList;
 import com.tjoeun.vo.ReservationVO;
 
-public class ReservationContetnService implements TemplateService_reservation {
+public class MyReservationSelectService implements TemplateService_reservation {
 
 	@Override
 	public void execute(ReservationVO reservationVO) { }
 
 	@Override
 	public void execute(Model model) {
-		System.out.println("reservationContentService의 execute() 메소드 실행");
+		System.out.println("MyReservationSelectService의 execute() 메소드 실행");
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 
+		String userID = request.getParameter("userID");
+//		System.out.println("MyContentSelectService 클래스 :" + userID);
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
 		ReservationDAO reservationDAO = ctx.getBean("ReservationDAO",ReservationDAO.class);
 	
@@ -35,22 +35,22 @@ public class ReservationContetnService implements TemplateService_reservation {
 		try {
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
 		}catch (Exception e) {}
-		int totalCount = reservationDAO.selectReservationCount();
+		int totalCount = reservationDAO.selectMyReservationCount(userID);
 		
 		ReservationList reservationList = ctx.getBean("ReservationList",ReservationList.class);
-		
+		ReservationList MyReservationList = ctx.getBean("MyReservationList",ReservationList.class);
 		reservationList.initReservationList(pageSize, totalCount, currentPage);
 		
 		HashMap<String, Integer> hmap = new HashMap<String, Integer>();
 		hmap.put("startNo", reservationList.getStartNo());
 		hmap.put("endNo", reservationList.getEndNo());
-		reservationList.setList(reservationDAO.selectReservationList(hmap));
+		MyReservationList.setList(reservationDAO.selectMyReservationList(hmap,userID));
+
 //		System.out.println(contentList);
 	
-		model.addAttribute("ReservationList", reservationList);
-		
-		
-		
+		model.addAttribute("ReservationList",reservationList);
+		model.addAttribute("MyReservationList", MyReservationList);
+		System.out.println(MyReservationList);
 	}
 }
 

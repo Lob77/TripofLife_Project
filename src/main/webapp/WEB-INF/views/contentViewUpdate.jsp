@@ -15,6 +15,8 @@
 <meta charset="UTF-8">
 <title>Trip Of Life</title>
 <!-- jQuery library -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -62,37 +64,6 @@ body {
 	padding-bottom: 10pt;
 }
 
-.text {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	font-family: 'Roboto', Arial, sans-serif;
-	font-size: 40px;
-	font-weight: bold;
-	line-height: 1.2;
-	letter-spacing: 0.05em;
-	white-space: nowrap;
-	text-transform: uppercase;
-	color: #fff;
-	background-color: #000;
-	mix-blend-mode: multiply;
-	opacity: 0;
-	animation: fadeInText 3s 2s ease-out forwards;
-}
-
-@
-keyframes scaleImage { 100% {
-	transform: scale(1);
-}
-
-}
-@
-keyframes fadeInText { 100% {
-	opacity: 1;
-}
-
-}
 .navbar-brand {
 	font-family: 'Anton', sans-serif;
 }
@@ -191,7 +162,8 @@ a:hover{
 			<form action="logout.nhn">
 				<button class="btn btn-outline-dark" type="submit"
 					style="margin: 10px">
-					<a href="./login.nhn" style="text-decoration: none; color: black;">로그아웃</a>
+					<a href="./login.nhn" style="text-decoration: none; color: black;">
+					<i class="bi bi-person-circle" style="margin-right: 2px;"></i>logout</a>
 				</button>
 			</form>
 		</div>
@@ -258,7 +230,7 @@ a:hover{
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="./index1.nhn">MY TRIP</a>
+			<a class="navbar-brand" href="./index1.nhn">Trip Of Life</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -291,7 +263,8 @@ a:hover{
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4"
 					style="float: right">
 					<li class="btn btn-light"><a class="nav-link"
-						href="./login.nhn">로그인</a></li>
+						href="./login.nhn">
+						<i class="bi bi-person-circle" style="margin-right: 2px;"></i>login</a></li>
 				</ul>
 
 

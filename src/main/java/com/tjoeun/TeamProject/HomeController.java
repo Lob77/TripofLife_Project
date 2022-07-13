@@ -32,8 +32,8 @@ import com.tjoeun.service.DeleteConfirmService;
 import com.tjoeun.service.DeleteContentService;
 import com.tjoeun.service.IncrementService;
 import com.tjoeun.service.MyContentSelectService;
+import com.tjoeun.service.MyReservationSelectService;
 import com.tjoeun.service.RegisterService;
-import com.tjoeun.service.ReservationContetnService;
 import com.tjoeun.service.TemplateService;
 import com.tjoeun.service.TemplateService_content;
 import com.tjoeun.service.TemplateService_reservation;
@@ -599,13 +599,15 @@ private String getJSON(String subject) {
 	public String myContentResGo(HttpServletRequest request, Model model) {
 		System.out.println("컨트롤러의 myContentResGo() 메소드 실행");
 		
+//		String userID = request.getParameter("userID");
+//		System.out.println("myContentResGo의 userID:" + userID);
 		model.addAttribute("request",request);
 		
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
-		TemplateService_reservation serviceReservation = ctx.getBean("reservationContent", ReservationContetnService.class);
+		TemplateService_reservation serviceReservation = ctx.getBean("MyContentRes", MyReservationSelectService.class);
 		serviceReservation.execute(model);
 		
-		return "reservationView";
+		return "myContentResView";
 		
 	}
 	

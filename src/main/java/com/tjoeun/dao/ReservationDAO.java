@@ -21,6 +21,8 @@ import org.springframework.jdbc.core.PreparedStatementSetter;
 import com.tjoeun.TeamProject.Constant;
 import com.tjoeun.vo.CommentVO;
 import com.tjoeun.vo.ContentVO;
+import com.tjoeun.vo.Param;
+import com.tjoeun.vo.ReservationParam;
 import com.tjoeun.vo.ReservationVO;
 
 public class ReservationDAO {
@@ -40,67 +42,17 @@ public class ReservationDAO {
 		}
 	}
 	
-	
-//	myReservaionView 단에서 작업할 댓글작업
-	public int insertComment(CommentVO cmo) {
-		System.out.println("CommentDAO의 Insert() 메소드");
-		//System.out.println("DAO :" + cmo);
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-		
-		try {
-			conn = dataSource.getConnection();
-			String sql = "insert into usercomment (idx, userID, userComment) values (?, ?, ?)";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, cmo.getIdx());
-			pstmt.setString(2, cmo.getUserID());
-			pstmt.setString(3, cmo.getUserComment());
-//			pstmt.executeUpdate();
-			return pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return -1;
-	}
 
-	public ArrayList<CommentVO> commentSelectList(int idx) {
-		System.out.println("CommentDAO의 commentSelectList() 메소드");
-		ArrayList<CommentVO> list = new ArrayList<CommentVO>();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		try {
-			conn = dataSource.getConnection();
-			String sql = "select * from usercomment where idx = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, idx);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				CommentVO cmo = new CommentVO();
-				cmo.setIdx(rs.getInt("idx"));
-				cmo.setUserID(rs.getString("userID"));
-				cmo.setUserComment(rs.getString("userComment"));
-				cmo.setWritedate(rs.getDate("writeDate"));
-				list.add(cmo);	
-				//System.out.println(list);
-			}
-		} catch (Exception e) {
-			
-		}
-		return list;
-	}
-
-	public int selectReservationCount() {
-		System.out.println("reservationDAO의 selectReservationCount() 메소드 실행");
-		String sql = "select count(*) from reservation";
+	public int selectMyReservationCount(String userID) {
+		System.out.println("reservationDAO의 selectMyReservationCount() 메소드 실행");
+		String sql = "select count(*) from reservation where resID='"+ userID+"'";
 		return template.queryForInt(sql);
 	}
 
-	public ArrayList<ReservationVO> selectReservationList(HashMap<String, Integer> hmap) {
-		System.out.println("ReservationDAO의 selectReservationList() 메소드 실행");
-		String sql = "select * from (" + "    select rownum rnum, AA.* from ("
-				+ "        select * from reservation order by idx desc" + "    ) AA where rownum <=" + hmap.get("endNo")+
+	public ArrayList<ReservationVO> selectMyReservationList(HashMap<String, Integer> hmap,String userID) {
+		System.out.println("ReservationDAO의 selectMyReservationList() 메소드 실행");
+		String sql = "select * from (" + "select rownum rnum, AA.* from ("
+				+ "select * from reservation where resID ='" + userID + "'order by residx desc) AA where rownum <=" + hmap.get("endNo")+
 				") where rnum >=" + hmap.get("startNo");
 		
 		return (ArrayList<ReservationVO>) template.query(sql, new BeanPropertyRowMapper(ReservationVO.class));

@@ -25,7 +25,7 @@ public class MyContentSelectService implements TemplateService_content {
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 
 		String userID = request.getParameter("userID");
-		System.out.println("MyContentSelectService 클래스 :" + userID);
+//		System.out.println("MyContentSelectService 클래스 :" + userID);
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
 		ContentDAO contentDAO = ctx.getBean("ContentDAO",ContentDAO.class);
 	
@@ -34,7 +34,7 @@ public class MyContentSelectService implements TemplateService_content {
 		try {
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
 		}catch (Exception e) {}
-		int totalCount = contentDAO.selectContentCount();
+		int totalCount = contentDAO.selectMyContentCount(userID);
 		
 		ContentList contentList = ctx.getBean("ContentList",ContentList.class);
 		ContentList MyContentList = ctx.getBean("MyContentList",ContentList.class);
@@ -48,7 +48,7 @@ public class MyContentSelectService implements TemplateService_content {
 
 //		System.out.println(contentList);
 	
-		
+		model.addAttribute("ContentList",contentList);
 		model.addAttribute("MyContentList", MyContentList);
 //		System.out.println(MyContentList);
 	}

@@ -14,7 +14,8 @@
 <meta charset="UTF-8">
 <title>MY TRIP</title>
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -99,7 +100,7 @@ li a:hover {
       // jQuery ajax
       $.ajax({
          type: 'POST',
-         url: '0616_TeamProject3/ChangePassword',
+         url: 'TripOfLife_Project/ChangePassword',
 //         url: '/ChangePassword',
          data: {
             userID: userID,
@@ -193,7 +194,8 @@ li a:hover {
 			<form action="logout.nhn">
 				<button class="btn btn-outline-dark" type="submit"
 					style="margin: 10px">
-					<a href="./login.nhn" style="text-decoration: none; color: black;">logout</a>
+					<a href="./login.nhn" style="text-decoration: none; color: black;">
+					<i class="bi bi-person-circle" style="margin-right: 2px;"></i>logout</a>
 				</button>
 			</form>
 		</div>

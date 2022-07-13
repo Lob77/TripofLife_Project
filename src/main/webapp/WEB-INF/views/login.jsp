@@ -41,6 +41,9 @@ nav {
 .navbar-brand {
 	font-family: 'Anton', sans-serif;
 }
+a:hover {
+	font-weight: 900;
+}
 </style>
 
 <title>Trip Of Life</title>

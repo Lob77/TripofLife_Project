@@ -62,6 +62,14 @@ public class ContentDAO {
 		String sql = "select count(*) from content";
 		return template.queryForInt(sql);		
 	}
+	
+	
+	  public int selectMyContentCount(String userID) {
+	  System.out.println("contentDAO의 selectMyContentCount() 메소드 실행"); String sql =
+	  "select count(*) from content where userID='"+userID+"'"; return
+	  template.queryForInt(sql); }
+	 
+
 
 	public ArrayList<ContentVO> selectContentList(HashMap<String, Integer> hmap){
 		System.out.println("contentDAO의 selectContentList() 메소드 실행");
@@ -204,8 +212,6 @@ public class ContentDAO {
 				
 			}
 		});
-		
-		
 		
 	}
 	
