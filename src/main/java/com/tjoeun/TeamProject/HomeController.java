@@ -20,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tjoeun.dao.CommentDAO;
 import com.tjoeun.dao.ContentDAO;
@@ -347,42 +348,45 @@ public class HomeController {
 	}
 	
 // ajax search 기능 구현 메소드 => 수정보완해야함
-	@RequestMapping("/HomeController")
-	protected void search(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		System.out.println("AjaxSearch() 함수가 GET 방식으로 요청됨");
+	@RequestMapping("/TripOfLife_Project/SearchTest")
+	protected void SearchTest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		System.out.println("AjaxSearch() 함수가 Post 방식으로 요청됨");
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
+		String subject = request.getParameter("subject").trim();
+		System.out.println(subject);
 		
-				request.setCharacterEncoding("UTF-8");
-				response.setContentType("text/html; charset=utf-8");// 보낼 때 한글깨짐 방지
-				String subject = request.getParameter("subject").trim();
-				// System.out.println(subject);
-				response.getWriter().write(getJSON(subject));
+		response.getWriter().write(getJSON(subject));
 	}
-private String getJSON(String subject) {
-	System.out.println("AjaxSearch 서블릿의 getJSON() 메소드");
-	if(subject == null) {
-		subject="";
+	private String getJSON(String subject) {
+		// System.out.println("AjaxSearch 서블릿의 getJSON() 메소드");
+		if (subject == null) {
+			subject = "";
+		}
+		
+		ArrayList<ContentVO> list = new ContentDAO().search(subject);
+		// System.out.println(list);
+		
+		StringBuffer result = new StringBuffer();
+		result.append("{\"result\": ["); // json 시작
+		for (ContentVO vo : list) {
+			result.append("[{\"value\": \"" + vo.getIdx() + "\"},");
+			result.append("{\"value\": \"" + vo.getSubject().trim() + "\"},");
+			result.append("{\"value\": \"" + vo.getUserID() + "\"},");
+			result.append("{\"value\": \"" + vo.getHit() + "\"},");
+			result.append("{\"value\": \"" + vo.getWriteDate() + "\"}],");
+		}
+		result.append("]}"); // json 끝
+		System.out.println(result);
+		
+		return result.toString();
 	}
-	
-	ArrayList<ContentVO> list = new ContentDAO().search(subject);
-	System.out.println(list);
-	StringBuffer result = new StringBuffer();
-	result.append("{\"result\": [");
-	
-	for(ContentVO vo : list) {
-		result.append("[{\"value\": \"" + vo.getIdx() + "\"},");	
-		result.append("{\"value\": \"" + vo.getSubject().trim() + "\"},");	
-		result.append("{\"value\": \"" + vo.getUserID().trim() + "\"},");	
-		result.append("{\"value\": \"" + vo.getHit() + "\"},");	
-		result.append("{\"value\": \"" + vo.getWriteDate() + "\"},");	
-		result.append("{\"value\": \"" + vo.getContent() + "\"}],");	
-	}
-	result.append("]}");
-	//System.out.println(result);
-	
-	return result.toString();
-}
-	
 
+		
+		
+		
+		
+		
 
 //	delete 권한체크 창	
 	@RequestMapping("/DeleteCheck")

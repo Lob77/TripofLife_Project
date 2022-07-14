@@ -63,8 +63,8 @@ public class ContentDAO {
 		return template.queryForInt(sql);		
 	}
 	
-	
-	  public int selectMyContentCount(String userID) {
+// MyContent	
+	public int selectMyContentCount(String userID) {
 	  System.out.println("contentDAO의 selectMyContentCount() 메소드 실행"); String sql =
 	  "select count(*) from content where userID='"+userID+"'"; return
 	  template.queryForInt(sql); }
@@ -165,11 +165,8 @@ public class ContentDAO {
 	
 	
 //	search ajax 기능수정코드 
-	
-	
-	
 	public ArrayList<ContentVO> search(String subject) {
-		System.out.println("AjaxDAO 클래스의 search() 메소드");
+		System.out.println("ContentDAO 클래스의 search() 메소드");
 		ArrayList<ContentVO> list = new ArrayList<ContentVO>();
 		
 		Connection conn = null;
@@ -190,7 +187,6 @@ public class ContentDAO {
 				vo.setUserID(rs.getString("userID"));
 				vo.setHit(rs.getInt("hit"));
 				vo.setWriteDate(rs.getTimestamp("writeDate"));
-				vo.setContent(rs.getString("content"));
 		
 				list.add(vo);
 			}
