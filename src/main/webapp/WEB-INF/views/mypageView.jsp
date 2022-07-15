@@ -131,17 +131,9 @@ li a:hover {
 					<li>
 						<form action="myContentResGo">
 							<input type="hidden" id="idx" name="userID" value="${userID}" />
-							<!--<input type="text" id="userID" name="userID" value="${userID}">-->
 							<input type="submit" value="내 컨텐츠 찜 내역">
 						</form>
 					</li>
-					<%-- 		      <li>
-		      	<form action="reservationGo">
-		        <input type="hidden" id="idx" name="userID" value="${userID}"/>
-		      	<!-- <input type="text" id="userID" name="userID" value="${userID}"> -->
-		      	<input type="submit" value="찜한 내역 조회">
-	      		</form>
-		     </li> --%>
 					<li style="margin-top: 5px;">
 						<form action="myContentGo">
 							<input type="hidden" name="userID" value="${userID}" /> <input

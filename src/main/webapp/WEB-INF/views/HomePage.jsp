@@ -270,9 +270,6 @@ a:hover {
 
 
 
-
-
-
 	<!-- Footer -->
 	<c:import url="./Common/Footer.jsp" />
 

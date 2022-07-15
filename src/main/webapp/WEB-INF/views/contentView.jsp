@@ -15,6 +15,7 @@
 <meta charset="UTF-8">
 <title>Trip Of Life</title>
 <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 <link rel="icon" href="./img/logo.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
@@ -128,9 +129,8 @@ a:hover {
 			}
 		});
 	}
-	// 코멘트 입력
-	const insertRequest = new XMLHttpRequest(); // 입력용
-	const searchRequest = new XMLHttpRequest(); // 검색용
+	const insertRequest = new XMLHttpRequest(); 
+	const searchRequest = new XMLHttpRequest(); 
 	
 	function insertComment() {
 		// console.log('insertComment()');
@@ -182,28 +182,18 @@ a:hover {
 	 function searchProcess() {
 		 if (searchRequest.readyState == 4 && searchRequest.status == 200) {
 				console.log('responseText: ', searchRequest.responseText);
-				// 서블릿에서 리턴된 문자열을 JavaScript 객체로 변환하기 위해 괄호를 붙여 eval() 함수로
-				// 실행해서 객체에 저장한다.
 				let object = eval('(' + searchRequest.responseText + ')');
 				console.log("object" + object);
-				// JavaScript 객체에서 result 라는 key에 할당된 데이터를 얻어온다. => 화면에 출력할 데이터
 				let result = object.result;
 				console.log("result" + result);
 
-				// 서블릿에서 수신한 데이터를 출력하기 위해 <tbody> 태그를 얻어온다.
 				let table = document.getElementById('commentTable');
-				// 새로 검색되는 데이터가 표시되어야 하므로 이전에 <tbody> 태그에 들어있던 내용은 지운다.
 				table.innerHTML = '';
 
-				// 데이터의 개수만큼 반복하며 테이블에 행을 만들어 추가한다.
 				for (let i = 0; i < result.length; i++) {
-					// <tbody>에 넣어줄 행을 만든다.
 					let row = table.insertRow(i);
-					// 한 행에 출력할 열의 개수만큼 반복하며 행에 열을 추가한다.
 					for (let j = 0; j < result[i].length; j++) {
-						// 행에 넣어줄 열을 만든다.
 						let cell = row.insertCell(j);
-						// 열에 화면에 표시할 데이터를 넣어준다.
 						cell.innerHTML = result[i][j].value;
 					}
 				}

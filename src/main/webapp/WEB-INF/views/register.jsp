@@ -160,9 +160,6 @@ a:hover {
 					</div>
 					<!-- checkMessage id 추가 -->
 					<div id="checkMessage" class="modal-body"></div>
-					<!--<div class="modal-footer">
-										 <button class="btn btn-primary" type="button" data-dismiss="modal" onclick="modalclose();">확인</button> 
-									</div>-->
 				</div>
 			</div>
 		</div>

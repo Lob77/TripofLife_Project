@@ -130,7 +130,7 @@
                         </li> -->
 							<form class="d-flex" style="margin-right: 20px;">
 									<input id="userSubject" name="item" class="form-control me-2" type="text"
-										placeholder="Search" autocomplete="off" onkeyup="searchFunction()" >
+										placeholder="Search" autocomplete="off" onkeyup="searchFunction()">
 									<input class="btn btn-dark" name="item-submit" id="userSubject"
 										type="button" onclick="searchFunction()" value="Search"/>
 							</form>
@@ -204,8 +204,7 @@
 	</div>
 
 		<div class="row" style="margin-bottom: 60px;">
-			<table class="table table-striped"
-				style="border: 1px solid #dddddd">
+			<table class="table table-striped" style="border: 1px solid #dddddd">
 				<thead>
 					<div style="padding: 4px; background-color:none;">
 					<h1 id ="title" colspan="5" style="font-size:40px; color: black; text-align: center; font-weight: bold; text-decoration: underline; text-underline-position: underline;">
@@ -260,7 +259,7 @@
 						 	</tr>
 					</c:forEach>
 				</c:if>
-			</tbody>
+			
 		
 		<!-- 페이지 이동 버튼 -->
 					<tr>
@@ -317,16 +316,13 @@
 
 						</td>
 					</tr>
-		
-		</table>
-	</div>
-</div>
+				</tbody>
+				</table>
+			</div>
+		</div>
 		
 	<!-- Footer -->
 	<c:import url="./Common/Footer.jsp" />
 
 </body>
 </html>
-
-
-<!-- https://whakscjs.tistory.com/entry/2012513-MVC%ED%8C%A8%ED%84%B4%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%ED%9A%8C%EC%9B%90-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0like-%EC%82%AC%EC%9A%A9 -->
