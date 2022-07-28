@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 import com.tjoeun.vo.CommentVO;
 
+
+// jdbc db 연결
 public class CommentDAO {
 
 
@@ -29,6 +31,8 @@ public class CommentDAO {
 		}
 	}
 
+	
+// 댓글 입력 함수	
 	public int insertComment(CommentVO cmo) {
 		System.out.println("CommentDAO의 Insert() 메소드");
 		//System.out.println("DAO :" + cmo);
@@ -46,6 +50,7 @@ public class CommentDAO {
 		return -1;
 	}
 
+// 글 번호에 따라 댓을 불러오는 함수
 	public ArrayList<CommentVO> commentSelectList(int idx) {
 		System.out.println("CommentDAO의 commentSelectList() 메소드");
 		ArrayList<CommentVO> list = new ArrayList<CommentVO>();

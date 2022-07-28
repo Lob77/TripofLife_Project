@@ -30,6 +30,7 @@ public class ContentDAO {
 
 	DataSource dataSource;
 	
+//	template 객체를 이용해 db 연결	
 	public ContentDAO() {
 		template = Constant.template;
 		try {
@@ -40,6 +41,8 @@ public class ContentDAO {
 			System.out.println("연결실패!!!");
 		}
 	}
+	
+//	게시글 입력 함수	
 	public void insert(final ContentVO contentVO) {	
 		System.out.println("contentDAO의 insert() 메소드 실행");
 //		System.out.println(contentVO);
@@ -56,21 +59,21 @@ public class ContentDAO {
 		});
 	}
 	
-	
+//	게시물 갯수 카운트 함수
 	public int selectContentCount() {
 		System.out.println("contentDAO의 selectContentCount() 메소드 실행");
 		String sql = "select count(*) from content";
 		return template.queryForInt(sql);		
 	}
 	
-// MyContent	
+// Id 값에 따른 MyContent 갯수 카운트 함수	
 	public int selectMyContentCount(String userID) {
 	  System.out.println("contentDAO의 selectMyContentCount() 메소드 실행"); String sql =
 	  "select count(*) from content where userID='"+userID+"'"; return
 	  template.queryForInt(sql); }
 	 
 
-
+//	게시글 리스트 목록 불러오는 함수 
 	public ArrayList<ContentVO> selectContentList(HashMap<String, Integer> hmap){
 		System.out.println("contentDAO의 selectContentList() 메소드 실행");
 		String sql = "select * from (" + "    select rownum rnum, AA.* from ("
@@ -81,7 +84,7 @@ public class ContentDAO {
 		
 	}
 		
-// bestContent
+// 	조회수 크기에 따라 리스트 목록 불러오는 함수 - bestContent 관련 함수
 	public ArrayList<ContentVO> selectBestContentList(HashMap<String, Integer> hmap){
 		System.out.println("contentDAO의 selectContentList() 메소드 실행");
 		String sql = "select * from (" + "    select rownum rnum, AA.* from ("
@@ -92,7 +95,7 @@ public class ContentDAO {
 		
 	}
 	
-	
+//	조회수 증가 함수	
 	public void Increment(int idx) {
 		System.out.println("ContentDAO의 increment() 메소드");
 		
@@ -120,7 +123,7 @@ public class ContentDAO {
 		
 	}	
 	
-	
+//	글 번호에 맞는 게시글을 보여주는 함수	
 	public ContentVO selectByIdx(int idx) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -164,7 +167,7 @@ public class ContentDAO {
 	
 	
 	
-//	search ajax 기능수정코드 
+//	search 기능을 실행하는 함수 
 	public ArrayList<ContentVO> search(String subject) {
 		System.out.println("ContentDAO 클래스의 search() 메소드");
 		ArrayList<ContentVO> list = new ArrayList<ContentVO>();
@@ -197,6 +200,7 @@ public class ContentDAO {
 		return list;
 	}
 
+//	글 번호에 맞는 게시글을 삭제하는 함수	
 	public void delete(final int idx) {
 		System.out.println("contentDAO의 delete() 메소드");
 		String sql = "delete from content where idx = ?";
@@ -210,7 +214,9 @@ public class ContentDAO {
 		});
 		
 	}
-	
+
+/*	
+//	글 번호에 맞는 게시글을 수정하는 함수- template 객체 사용시 	
 	public void update(final int idx,final String subject,final String content) {
 		System.out.println("ContentDAO의 update(int idx, String subject, String content) 메소드");
 		String sql = String.format("update content set subject = '%s' , content ='%s' where idx = %d",
@@ -218,7 +224,8 @@ public class ContentDAO {
 
 		template.update(sql);
 	}
-	
+*/		
+//	글 번호에 맞는 게시글을 수정하는 함수	
 	public void update(final ContentVO contentVO) {
 		System.out.println("ContentDAO의 update(ContentVO contentVO) 메소드");
 		
@@ -235,8 +242,10 @@ public class ContentDAO {
 		});
 		
 	}
+	
+//	Id 값에 따른 myContent 리스트 목록 불러오는 함수	
 	public ArrayList<ContentVO> selectMyContentList(HashMap<String, Integer> hmap,String userID) {
-//		System.out.println("contentDAO의 selectMyContentList() 메소드 실행");
+		System.out.println("contentDAO의 selectMyContentList() 메소드 실행");
 //		System.out.println("selectMyContentList 메소드의 :"+userID);
 		String sql = "select * from (" + "select rownum rnum, AA.* from ("
 				+ "select * from content where userID ='" + userID + "'order by idx desc) AA where rownum <=" + hmap.get("endNo")+

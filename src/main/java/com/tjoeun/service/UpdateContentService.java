@@ -32,7 +32,7 @@ public class UpdateContentService implements TemplateService_content {
 		
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
 		ContentDAO contentDAO = ctx.getBean("ContentDAO", ContentDAO.class);
-		contentDAO.update(idx,subject,content);
+//		contentDAO.update(idx,subject,content); - template 객체 사용시
 		
 		
 		ContentVO contentVO = ctx.getBean("ContentVO",ContentVO.class);

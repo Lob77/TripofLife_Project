@@ -24,11 +24,10 @@ import jdk.nashorn.internal.ir.RuntimeNode.Request;
 public class UserInfoDAO {
 
 	private JdbcTemplate template;
-
 	
 	DataSource dataSource;
 	
-	
+// template 객체를 이용해 db 연결	
 	public UserInfoDAO() {
 		template = Constant.template;
 		try {
@@ -41,6 +40,8 @@ public class UserInfoDAO {
 		}
 	}
 
+	
+//	회원가입 시 계정중복 및 공백체크 함수
 	public int registerCheck(String userID) {
 		System.out.println("UserInfoDAO 클래스의 registerCheck() 메소드");
 		Connection conn=null;
@@ -72,7 +73,9 @@ public class UserInfoDAO {
 		return -1;
 	}
 	
+
 	
+//	회원가입 완료시 계정 DB에 저장하는 함수	
 	public void registerOK(final String userID, final String userPassword) {
 		System.out.println("UserInfoDAO 클래스의 registerOK() 메소드");
 		String sql = "insert into userinfo(userID,userPassword)"+
@@ -150,7 +153,9 @@ public class UserInfoDAO {
 	
 }	
  */
-		
+
+	
+//	로그인 시 패스워드 체크 및 계정 체크하는 함수
 	public int loginCheck(String userID, String userPassword) {
 		System.out.println("UserInfoDAO 클래스의 loginCheck() 메소드");
 		
@@ -182,10 +187,11 @@ public class UserInfoDAO {
 		return -2; // sql문 에러
 	}
 
+//	게시물 삭제 시 userID와 userPassword 계정에 따른 권한확인	
 	public int DeleteConfirm(String userID, String userPassword,String userID1) {
 		System.out.println("UserInfoDAO 클래스의 DeleteConfirm() 메소드 실행");
-		System.out.println(userID);
-		System.out.println(userPassword);
+//		System.out.println(userID);
+//		System.out.println(userPassword);
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -211,6 +217,7 @@ public class UserInfoDAO {
 		return -2;
 	}
 
+//	게시물 삭제 시 userID와 userPassword 계정에 따른 권한확인	
 	public int UpdateConfirm(String userID, String userPassword, String userID2) {
 		System.out.println("UserInfoDAO 클래스의 UpdateConfirm() 메소드 실행");
 //		System.out.println(userID);
@@ -240,6 +247,7 @@ public class UserInfoDAO {
 		return -2;
 	}
 
+//	mypage 비밀번호 변경 함수
 	public int userUpdate(ArrayList<String> list) {
 		System.out.println("UserInfoDAO 클래스의 userUpdate() 메소드");
 

@@ -30,7 +30,9 @@ public class ReservationDAO {
 	private JdbcTemplate template;
 
 	DataSource dataSource;
+
 	
+// 	template 객체를 이용해 db 연결	
 	public ReservationDAO() {
 		template = Constant.template;
 		try {
@@ -42,13 +44,14 @@ public class ReservationDAO {
 		}
 	}
 	
-
+//	Id 값에 따른 찜 게시물 갯수 카운트 함수
 	public int selectMyReservationCount(String userID) {
 		System.out.println("reservationDAO의 selectMyReservationCount() 메소드 실행");
 		String sql = "select count(*) from reservation where resID='"+ userID+"'";
 		return template.queryForInt(sql);
 	}
-
+	
+//	Id 값에 따른 찜 리스트 목록 불러오는 함수
 	public ArrayList<ReservationVO> selectMyReservationList(HashMap<String, Integer> hmap,String userID) {
 		System.out.println("ReservationDAO의 selectMyReservationList() 메소드 실행");
 		String sql = "select * from (" + "select rownum rnum, AA.* from ("
@@ -58,7 +61,7 @@ public class ReservationDAO {
 		return (ArrayList<ReservationVO>) template.query(sql, new BeanPropertyRowMapper(ReservationVO.class));
 	}
 
-//	Reservation기능 실행	
+//	찜 기능 실행	
 	public int reservation(final ReservationVO ro) {
 		System.out.println("reservationDAO의 reservation() 메소드 실행");
 		
