@@ -9,6 +9,7 @@
 	boolean login = userID != null ? true : false;
 %>
 <!-- 세션에 저장된 로그인 정보 -->
+<!-- 09월23일 pull-request 연습 -->
 <!DOCTYPE html>
 <html>
 <head>
